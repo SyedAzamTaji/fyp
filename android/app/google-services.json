@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "864878344526",
+    "project_id": "prac-daf1f",
+    "storage_bucket": "prac-daf1f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864878344526:android:68592d85d094fce63f461f",
+        "android_client_info": {
+          "package_name": "com.example.prac"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDURQbFqTuPBg5o1nQ86iIPaKB4YthmDrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
