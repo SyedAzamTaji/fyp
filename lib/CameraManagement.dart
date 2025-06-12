@@ -11,13 +11,13 @@ class CameraManagementPage extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: <Widget>[
-          // Left-hand side (LHS) - Background Image
+          
           Expanded(
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/image123.jpg'), // Background image
+                  image: AssetImage('assets/image123.jpg'), 
                   fit: BoxFit.cover,
                 ),
               ),

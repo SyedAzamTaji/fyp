@@ -3,6 +3,7 @@ import 'package:myapp/AreasFeed.dart'; // Import AreasFeedPage
 import 'package:myapp/Home.dart'; // Import HomePage
 import 'package:myapp/UserSetting.dart'; // Import UserSettingsPage
 import 'package:myapp/CameraInformation.dart';
+import 'package:myapp/cctv/main_screen.dart';
 
 class UserDashboard extends StatelessWidget {
   const UserDashboard({Key? key}) : super(key: key); // Add key parameter
@@ -45,7 +46,7 @@ class UserDashboard extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const AreasFeedPage(),
+                          builder: (context) => const MainScreen(),
                         ),
                       );
                     },

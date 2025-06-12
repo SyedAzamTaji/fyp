@@ -12,9 +12,9 @@ class AdminDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue, // Keep AppBar color as blue
+        backgroundColor: Colors.blue,
         title: const Text('Admin Dashboard'),
-        centerTitle: true, // Center the title
+        centerTitle: true,
       ),
       drawer: Drawer(
         child: Column(
@@ -24,9 +24,7 @@ class AdminDashboard extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 children: [
                   const DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Colors.blue, // Match UserDashboard style
-                    ),
+                    decoration: BoxDecoration(color: Colors.blue),
                     child: Center(
                       child: Text(
                         'Admin Menu',
@@ -39,7 +37,7 @@ class AdminDashboard extends StatelessWidget {
                     ),
                   ),
                   ListTile(
-                    leading: Icon(Icons.camera_alt, color: Colors.blue), // Added icon
+                    leading: Icon(Icons.camera_alt, color: Colors.blue),
                     title: const Text('Camera Management'),
                     onTap: () => Navigator.push(
                       context,
@@ -49,7 +47,7 @@ class AdminDashboard extends StatelessWidget {
                     ),
                   ),
                   ListTile(
-                    leading: Icon(Icons.people, color: Colors.blue), // Added icon
+                    leading: Icon(Icons.people, color: Colors.blue),
                     title: const Text('User Management'),
                     onTap: () => Navigator.push(
                       context,
@@ -59,7 +57,7 @@ class AdminDashboard extends StatelessWidget {
                     ),
                   ),
                   ListTile(
-                    leading: Icon(Icons.settings, color: Colors.blue), // Added icon
+                    leading: Icon(Icons.settings, color: Colors.blue),
                     title: const Text('Settings'),
                     onTap: () => Navigator.push(
                       context,
@@ -73,7 +71,7 @@ class AdminDashboard extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              leading: Icon(Icons.logout, color: Colors.red), // Added icon
+              leading: Icon(Icons.logout, color: Colors.red),
               title: const Text('Log out'),
               onTap: () => Navigator.pushReplacement(
                 context,
@@ -85,15 +83,36 @@ class AdminDashboard extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(
-        child: Text(
-          'Admin Dashboard',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-          ),
-        ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: 600,
+                  minHeight: constraints.maxHeight,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      SizedBox(height: 100),
+                      Text(
+                        'Admin Dashboard',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }

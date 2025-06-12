@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:myapp/AdminSetting.dart';
+import 'package:myapp/cctv/detection_provider.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
-import 'package:myapp/Home.dart' as Home; // Optional alias if needed
-import 'package:myapp/home.dart'; // Assuming this contains HomePage
-
+import 'package:myapp/Home.dart' as Home; 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+
+  // Run the app with Provider
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => DetectionProvider(),
+      child:  MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +29,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'CCTV Security',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(), // Ensure this points to your desired home page
+      home:
+       Home.HomePage(), 
     );
   }
 }
